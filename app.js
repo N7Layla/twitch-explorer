@@ -1,5 +1,5 @@
 const baseURL = "https://api.twitch.tv/helix/";
-axios.defaults.headers.common['Client-ID'] = 'xi20i0yg71ls1370w3kw9wa175wx2s';
+axios.defaults.headers.common['Client-ID'] = 'CLIENT ID HERE';
 
 
 Vue.component('streams-list', {
@@ -9,9 +9,9 @@ Vue.component('streams-list', {
       <div class="row">
         <div class="columns large-3 medium-6" v-for="stream in ow">
           <div class="card">
-          <div class="stream-title">{{ stream.title }}</div>
+          <div class="stream-text">{{ stream.title }}</div>
           <a :href="'http://twitch.tv/' + stream.thumbnail_url.slice(52, -21)"><img :src="stream.thumbnail_url.slice(0, stream.thumbnail_url.length - 20) + '250x150.jpg'"></a>
-          <div class="stream-title" align="right">{{ stream.viewer_count }} viewers</div>
+          <div class="stream-text" align="right">{{ stream.viewer_count }} viewers</div>
         </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ Vue.component('ow-stats', {
   `,
 });
 
-const vm = new Vue({
+const vue = new Vue({
   el: '#app',
   data: {
     stats: [],
